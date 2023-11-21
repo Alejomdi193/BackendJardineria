@@ -68,8 +68,7 @@ Devolver un listado con todos los clientes que sean de la ciudad de Madrid y cuy
 ### 12. Listado de Clientes y Representantes de Ventas
 Obtener un listado con el nombre de cada cliente y el nombre y apellido de su representante de ventas.
 
-#### Utilizando SQL1
-**URL de la consulta:** [http://localhost:5211/api/Cliente/Consulta12](#) | **Imagen:![Alt text](image-13.png)** 
+
 
 #### Utilizando SQL2 INNER JOIN
 **URL de la consulta:** [http://localhost:5211/api/Cliente/Consulta12Sql2I](#) | **Imagen:![Alt text](image-14.png)** 
@@ -81,8 +80,7 @@ Obtener un listado con el nombre de cada cliente y el nombre y apellido de su re
 ### 13. Clientes con Pagos y sus Representantes de Ventas
 Mostrar el nombre de los clientes que hayan realizado pagos junto con el nombre de sus representantes de ventas.
 
-#### Utilizando SQL1
-**URL de la consulta:** [http://localhost:5211/api/Cliente/Consulta13](#) | **Imagen:![Alt text](image-16.png)** 
+ 
 
 #### Utilizando SQL2 INNER JOIN
 **URL de la consulta:** [http://localhost:5211/api/Cliente/Consulta13Sql2I](#) | **Imagen:![Alt text](image-17.png)** 
@@ -94,8 +92,7 @@ Mostrar el nombre de los clientes que hayan realizado pagos junto con el nombre 
 ### 14. Clientes sin Pagos y sus Representantes de Ventas
 Mostrar el nombre de los clientes que no hayan realizado pagos junto con el nombre de sus representantes de ventas.
 
-#### Utilizando SQL1
-**URL de la consulta:** [http://localhost:5211/api/Cliente/Consulta14](#) | **Imagen:![Alt text](image-19.png)** 
+ 
 
 #### Utilizando SQL2 INNER JOIN
 **URL de la consulta:** [http://localhost:5211/api/Cliente/Consulta14Sql2I](#) | **Imagen:![Alt text](image-20.png)** 
@@ -106,8 +103,7 @@ Mostrar el nombre de los clientes que no hayan realizado pagos junto con el nomb
 ### 15. Clientes con Pagos, Representantes y Ciudad de la Oficina
 Devolver el nombre de los clientes que han hecho pagos y el nombre de sus representantes junto con la ciudad de la oficina a la que pertenece el representante.
 
-#### Utilizando SQL1
-**URL de la consulta:** [http://localhost:5211/api/Cliente/Consulta15](#) | **Imagen:![Alt text](image-22.png)** 
+
 
 #### Utilizando SQL2 INNER JOIN
 **URL de la consulta:** [http://localhost:5211/api/Cliente/Consulta15Sql2I](#) | **Imagen:![Alt text](image-23.png)** 
@@ -120,8 +116,7 @@ Devolver el nombre de los clientes que han hecho pagos y el nombre de sus repres
 ### 16. Clientes sin Pagos, Representantes y Ciudad de la Oficina
 Devolver el nombre de los clientes que no hayan hecho pagos y el nombre de sus representantes junto con la ciudad de la oficina a la que pertenece el representante.
 
-#### Utilizando SQL1
-**URL de la consulta:** [http://localhost:5211/api/Cliente/Consulta16](#) | **Imagen:![Alt text](image-25.png)** 
+
 
 #### Utilizando SQL2 INNER JOIN
 **URL de la consulta:** [http://localhost:5211/api/Cliente/Consulta16Sql2I](#) | **Imagen:![Alt text](image-26.png)** 
@@ -135,8 +130,6 @@ Devolver el nombre de los clientes que no hayan hecho pagos y el nombre de sus r
 ### 17. Listado de Empleados y Jefes
 Devolver un listado que muestre el nombre de cada empleado, el nombre de su jefe y el nombre del jefe de sus jefe.
 
-#### Utilizando SQL1
-**URL de la consulta:** [http://localhost:5211/api/Empleado/Consulta17](#) | **Imagen:![Alt text](image-28.png)** 
 
 #### Utilizando SQL2 INNER JOIN
 **URL de la consulta:** [http://localhost:5211/api/Empleado/Consulta17Sql2I](#) | **Imagen:![Alt text](image-29.png)** 
@@ -149,8 +142,8 @@ Devolver un listado que muestre el nombre de cada empleado, el nombre de su jefe
 ### 18. Listado de Cliente,Entrega cumplida
 Devuelve el nombre de los clientes a los que no se les ha entregado a tiempo un pedido.
 
-#### Utilizando SQL1
-**URL de la consulta:** [http://localhost:5211/api/Cliente/Consulta18](#) | **Imagen:![Alt text](image-31.png)** 
+
+
 
 #### Utilizando SQL2 INNER JOIN
 **URL de la consulta:** [http://localhost:5211/api/Cliente/Consulta18Sql2I](#) | **Imagen:![Alt text](image-32.png)** 
@@ -163,8 +156,7 @@ Devuelve el nombre de los clientes a los que no se les ha entregado a tiempo un 
 ### 19. Diferentes Gamas de Producto Compradas por Cliente
 Devolver un listado de las diferentes gamas de producto que ha comprado cada cliente.
 
-#### Utilizando SQL1
-**URL de la consulta:** [http://localhost:5211/api/Cliente/Consulta19](#) | **Imagen:![Alt text](image-34.png)** 
+
 
 #### Utilizando SQL2 INNER JOIN
 **URL de la consulta:** [http://localhost:5211/api/Cliente/Consulta19Sql2I](#) | **Imagen:![Alt text](image-35.png)** 
@@ -184,11 +176,7 @@ Obtener un listado que muestre solamente los clientes que no han realizado ning�
 #### Utilizando RIGTH JOIN
 **URL de la consulta:** [http://localhost:5211/api/Cliente/Consulta20Right](#) | **Imagen:![Alt text](image-38.png)** 
 
-#### Utilizando NATURAL LEFT JOIN
-**URL de la consulta:** [http://localhost:5211/api/Cliente/Consulta19Sql2N](#) | **Imagen:![Alt text](image-39.png)** 
 
-#### Utilizando NATURAL RIGTH JOIN
-**URL de la consulta:** [http://localhost:5211/api/Cliente/Consulta20NaturalRight](#) | **Imagen:![Alt text](image-40.png)** 
 
 
 
@@ -202,11 +190,6 @@ Devuelve un listado que muestre los clientes que no han realizado ningún pago y
 #### Utilizando RIGTH JOIN
 **URL de la consulta:** [http://localhost:5211/api/Cliente/Consulta21Right](#) | **Imagen:![Alt text](image-42.png)** 
 
-#### Utilizando NATURAL LEFT JOIN
-**URL de la consulta:** [http://localhost:5211/api/Cliente/Consulta21NaturalRight](#) | **Imagen:![Alt text]![Alt text](image-44.png)** 
-
-#### Utilizando NATURAL RIGTH JOIN
-**URL de la consulta:** [http://localhost:5211/api/Cliente/Consulta21NaturalRight](#) | **Imagen:![Alt text](image-41.png)** 
 
 
 
@@ -220,11 +203,6 @@ Devuelve un listado que muestre solamente los empleados que no tienen un cliente
 #### Utilizando RIGTH JOIN
 **URL de la consulta:** [http://localhost:5211/api/Cliente/Consulta22Right](#) | **Imagen:![Alt text](image-46.png)** 
 
-#### Utilizando NATURAL LEFT JOIN
-**URL de la consulta:** [http://localhost:5211/api/Cliente/Consulta22NaturalLeft](#) | **Imagen:![Alt text](image-47.png)** 
-
-#### Utilizando NATURAL RIGTH JOIN
-**URL de la consulta:** [http://localhost:5211/api/Cliente/Consulta22NaturalRight](#) | **Imagen:![Alt text](image-48.png)** 
 
 
 
@@ -238,11 +216,6 @@ Devuelve un listado que muestre los empleados que no tienen una oficina asociada
 #### Utilizando RIGTH JOIN
 **URL de la consulta:** [http://localhost:5211/api/Empleado/Consulta23Right](#) | **Imagen:![Alt text](image-50.png)** 
 
-#### Utilizando NATURAL LEFT JOIN
-**URL de la consulta:** [http://localhost:5211/api/Empleado/Consulta23NaturalLeft](#) | **Imagen:![Alt text](image-52.png)** 
-
-#### Utilizando NATURAL RIGTH JOIN
-**URL de la consulta:** [http://localhost:5211/api/Empleado/Consulta23NaturalRight](#) | **Imagen:![Alt text](image-51.png)** 
 
 
 
@@ -256,11 +229,7 @@ Devuelve un listado de los productos que nunca han aparecido en un pedido.
 #### Utilizando RIGTH JOIN
 **URL de la consulta:** [http://localhost:5211/api/Producto/Consulta24Right](#) | **Imagen:![Alt text](image-54.png)** 
 
-#### Utilizando NATURAL LEFT JOIN
-**URL de la consulta:** [http://localhost:5211/api/Producto/Consulta24NaturalLeft](#) | **Imagen:![Alt text](image-55.png)** 
 
-#### Utilizando NATURAL RIGTH JOIN
-**URL de la consulta:** [http://localhost:5211/api/Producto/Consulta24NaturalRight](#) | **Imagen:![Alt text](image-56.png)** 
 
 
 
@@ -274,11 +243,6 @@ Devuelve un listado de los productos que nunca han aparecido en un pedido. El re
 #### Utilizando RIGTH JOIN
 **URL de la consulta:** [http://localhost:5211/api/Producto/Consulta25Right](#) | **Imagen:![Alt text](image-58.png)** 
 
-#### Utilizando NATURAL LEFT JOIN
-**URL de la consulta:** [http://localhost:5211/api/Producto/Consulta25NaturalLeft](#) | **Imagen:![Alt text](image-59.png)** 
-
-#### Utilizando NATURAL RIGTH JOIN
-**URL de la consulta:** [http://localhost:5211/api/Producto/Consulta25NaturalRight](#) | **Imagen:![Alt text](image-60.png)** 
 
 
 
@@ -292,11 +256,7 @@ Devuelve las oficinas donde no trabajan ninguno de los empleados que hayan sido 
 #### Utilizando RIGTH JOIN
 **URL de la consulta:** [http://localhost:5211/api/Empleado/Consulta26Right](#) | **Imagen:![Alt text](image-62.png)** 
 
-#### Utilizando NATURAL LEFT JOIN
-**URL de la consulta:** [http://localhost:5211/api/Oficina/Consulta26NaturalLeft](#) | **Imagen:![Alt text](image-63.png)** 
 
-#### Utilizando NATURAL RIGTH JOIN
-**URL de la consulta:** [http://localhost:5211/api/Empleado/Consulta26NaturalRight](#) | **Imagen:![Alt text](image-64.png)** 
 
 
 
@@ -310,11 +270,6 @@ Devuelve un listado con los clientes que han realizado algún pedido pero no han
 #### Utilizando RIGTH JOIN
 **URL de la consulta:** [http://localhost:5211/api/Cliente/Consulta27Right](#) | **Imagen:![Alt text](image-66.png)** 
 
-#### Utilizando NATURAL LEFT JOIN
-**URL de la consulta:** [http://localhost:5211/api/Cliente/Consulta27NaturalLeft](#) | **Imagen:![Alt text](image-68.png)** 
-
-#### Utilizando NATURAL RIGTH JOIN
-**URL de la consulta:** [http://localhost:5211/api/Cliente/Consulta27NaturalRight](#) | **Imagen:![Alt text](image-67.png)** 
 
 
 
@@ -328,11 +283,7 @@ Devuelve un listado con los datos de los empleados que no tienen clientes asocia
 #### Utilizando RIGTH JOIN
 **URL de la consulta:** [http://localhost:5211/api/Empleado/Consulta28Right](#) | **Imagen:![Alt text](image-70.png)** 
 
-#### Utilizando NATURAL LEFT JOIN
-**URL de la consulta:** [http://localhost:5211/api/Empleado/Consulta28NaturalLeft](#) | **Imagen:![Alt text](image-71.png)** 
 
-#### Utilizando NATURAL RIGTH JOIN
-**URL de la consulta:** [http://localhost:5211/api/Empleado/Consulta28NaturalRight](#) | **Imagen:![Alt text](image-72.png)** 
 
 
 
@@ -469,15 +420,15 @@ Devuelve el nombre, apellidos, puesto y teléfono de la oficina de aquellos empl
 
 **URL de la consulta:** [http://localhost:5211/api/Empleado/Consulta54](#) | **Imagen:![Alt text](image-95.png)** 
 
-## Consultas de una sola tabla - Subconsultas con IN y NOT IN
+
 
 #### 55. Clientes que no han Realizado Pagos 
-Devuelve un listado que muestre solamente los clientes que no han realizado ningún pago utilizando una subconsulta con IN.
+Devuelve un listado que muestre solamente los clientes que no han realizado ningún pago.
 
 **URL de la consulta:** [http://localhost:5211/api/Cliente/Consulta55](#) | **Imagen:![Alt text](image-96.png)** 
 
 #### 56. Clientes que han Realizado Pagos 
-Devuelve un listado que muestre solamente los clientes que sí han realizado algún pago utilizando una subconsulta con IN.
+Devuelve un listado que muestre solamente los clientes que sí han realizado algún pago.
 
 **URL de la consulta:** [http://localhost:5211/api/Cliente/Consulta56](#) | **Imagen:![Alt text](image-97.png)** 
 

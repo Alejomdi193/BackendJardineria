@@ -162,7 +162,7 @@ namespace Aplicacion.Repository
             return resultado;
         }
 
-        // LEFT JOIN
+       
         public async Task<IEnumerable<object>> Consulta25Left()
         {
             var mensaje = "Productos que nunca han aparecido en un pedido (LEFT JOIN)".ToUpper();

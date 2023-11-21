@@ -72,14 +72,7 @@ public class ClienteController : BaseApiController
         var data = await unitOfWork.Clientes.Consulta11();
         return mapper.Map<List<object>>(data);
     }
-    [HttpGet("Consulta12")]
-    [ProducesResponseType(StatusCodes.Status200OK)]
-    [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<ActionResult<IEnumerable<object>>> Get12()
-    {
-        var data = await unitOfWork.Clientes.Consulta12();
-        return mapper.Map<List<object>>(data);
-    }
+
 
     [HttpGet("Consulta12Sql2I")]
     [ProducesResponseType(StatusCodes.Status200OK)]
@@ -99,14 +92,7 @@ public class ClienteController : BaseApiController
     }
 
 
-    [HttpGet("Consulta13")]
-    [ProducesResponseType(StatusCodes.Status200OK)]
-    [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<ActionResult<IEnumerable<object>>> Get13()
-    {
-        var data = await unitOfWork.Clientes.Consulta13();
-        return mapper.Map<List<object>>(data);
-    }
+
 
 
 
@@ -128,14 +114,7 @@ public class ClienteController : BaseApiController
         return mapper.Map<List<object>>(data);
     }
 
-    [HttpGet("Consulta14")]
-    [ProducesResponseType(StatusCodes.Status200OK)]
-    [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<ActionResult<IEnumerable<object>>> Get14()
-    {
-        var data = await unitOfWork.Clientes.Consulta14();
-        return mapper.Map<List<object>>(data);
-    }
+
 
     [HttpGet("Consulta14Sql2I")]
     [ProducesResponseType(StatusCodes.Status200OK)]
@@ -156,14 +135,6 @@ public class ClienteController : BaseApiController
     }
 
 
-    [HttpGet("Consulta15")]
-    [ProducesResponseType(StatusCodes.Status200OK)]
-    [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<ActionResult<IEnumerable<object>>> Get15()
-    {
-        var data = await unitOfWork.Clientes.Consulta15();
-        return mapper.Map<List<object>>(data);
-    }
 
 
 
@@ -187,14 +158,7 @@ public class ClienteController : BaseApiController
         return mapper.Map<List<object>>(data);
     }
 
-    [HttpGet("Consulta16")]
-    [ProducesResponseType(StatusCodes.Status200OK)]
-    [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<ActionResult<IEnumerable<object>>> Get16()
-    {
-        var data = await unitOfWork.Clientes.Consulta16();
-        return mapper.Map<List<object>>(data);
-    }
+
 
     [HttpGet("Consulta16Sql2I")]
     [ProducesResponseType(StatusCodes.Status200OK)]
@@ -214,14 +178,7 @@ public class ClienteController : BaseApiController
         return mapper.Map<List<object>>(data);
     }
 
-    [HttpGet("Consulta18")]
-    [ProducesResponseType(StatusCodes.Status200OK)]
-    [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<ActionResult<IEnumerable<object>>> Get18()
-    {
-        var data = await unitOfWork.Clientes.Consulta18();
-        return mapper.Map<List<object>>(data);
-    }
+
 
     [HttpGet("Consulta18Sql2I")]
     [ProducesResponseType(StatusCodes.Status200OK)]
@@ -242,14 +199,6 @@ public class ClienteController : BaseApiController
     }
 
 
-    [HttpGet("Consulta19")]
-    [ProducesResponseType(StatusCodes.Status200OK)]
-    [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<ActionResult<IEnumerable<object>>> Get19()
-    {
-        var data = await unitOfWork.Clientes.Consulta19();
-        return mapper.Map<List<object>>(data);
-    }
 
     [HttpGet("Consulta19Sql2I")]
     [ProducesResponseType(StatusCodes.Status200OK)]
@@ -288,23 +237,7 @@ public class ClienteController : BaseApiController
     }
 
 
-    [HttpGet("Consulta20NaturalLeft")]
-    [ProducesResponseType(StatusCodes.Status200OK)]
-    [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<ActionResult<IEnumerable<object>>> Get20NaturalLeft()
-    {
-        var data = await unitOfWork.Clientes.Consulta20NaturalLeft();
-        return mapper.Map<List<object>>(data);
-    }
 
-    [HttpGet("Consulta20NaturalRight")]
-    [ProducesResponseType(StatusCodes.Status200OK)]
-    [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<ActionResult<IEnumerable<object>>> Get20NaturaRight()
-    {
-        var data = await unitOfWork.Clientes.Consulta20NaturalRight();
-        return mapper.Map<List<object>>(data);
-    }
 
 
     [HttpGet("Consulta21Left")]
@@ -326,23 +259,7 @@ public class ClienteController : BaseApiController
     }
 
 
-    [HttpGet("Consulta21NaturalLeft")]
-    [ProducesResponseType(StatusCodes.Status200OK)]
-    [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<ActionResult<IEnumerable<object>>> Get21NaturalLeft()
-    {
-        var data = await unitOfWork.Clientes.Consulta21NaturalLeft();
-        return mapper.Map<List<object>>(data);
-    }
 
-    [HttpGet("Consulta21NaturalRight")]
-    [ProducesResponseType(StatusCodes.Status200OK)]
-    [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<ActionResult<IEnumerable<object>>> Get21NaturaRight()
-    {
-        var data = await unitOfWork.Clientes.Consulta21NaturalRight();
-        return mapper.Map<List<object>>(data);
-    }
 
 
     [HttpGet("Consulta22Left")]
@@ -363,24 +280,6 @@ public class ClienteController : BaseApiController
         return mapper.Map<List<object>>(data);
     }
 
-
-    [HttpGet("Consulta22NaturalLeft")]
-    [ProducesResponseType(StatusCodes.Status200OK)]
-    [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<ActionResult<IEnumerable<object>>> Get22NaturalLeft()
-    {
-        var data = await unitOfWork.Clientes.Consulta21NaturalLeft();
-        return mapper.Map<List<object>>(data);
-    }
-
-    [HttpGet("Consulta22NaturalRight")]
-    [ProducesResponseType(StatusCodes.Status200OK)]
-    [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<ActionResult<IEnumerable<object>>> Get22NaturaRight()
-    {
-        var data = await unitOfWork.Clientes.Consulta22NaturalRight();
-        return mapper.Map<List<object>>(data);
-    }
 
 
 
@@ -403,24 +302,6 @@ public class ClienteController : BaseApiController
         return mapper.Map<List<object>>(data);
     }
 
-
-    [HttpGet("Consulta27NaturalLeft")]
-    [ProducesResponseType(StatusCodes.Status200OK)]
-    [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<ActionResult<IEnumerable<object>>> Get27NaturalLeft()
-    {
-        var data = await unitOfWork.Clientes.Consulta27NaturalLeft();
-        return mapper.Map<List<object>>(data);
-    }
-
-    [HttpGet("Consulta27NaturalRight")]
-    [ProducesResponseType(StatusCodes.Status200OK)]
-    [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<ActionResult<IEnumerable<object>>> Get27NaturaRight()
-    {
-        var data = await unitOfWork.Clientes.Consulta22NaturalRight();
-        return mapper.Map<List<object>>(data);
-    }
 
     [HttpGet("Consulta33")]
     [ProducesResponseType(StatusCodes.Status200OK)]

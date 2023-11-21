@@ -94,26 +94,7 @@ namespace Aplicacion.Repository
             return resultado;
         }
 
-        public async Task<IEnumerable<object>> Consulta12()
-        {
-            var mensaje = "Listado con el nombre de cada cliente y el nombre y apellido de su representante de ventas".ToUpper();
 
-            var consulta = from cliente in _context.Clientes
-                           join representante in _context.Empleados on cliente.CodigoEmpleadoRepVentas equals representante.CodigoEmpleado
-                           select new
-                           {
-                               cliente.NombreCliente,
-                               representante.Nombre,
-                               representante.Apellido1
-                           };
-
-            var resultado = new List<object>
-                {
-                    new { Informacion = mensaje, Resultado = await consulta.ToListAsync() }
-                };
-
-            return resultado;
-        }
         public async Task<IEnumerable<object>> Consulta12Sql2I()
         {
             var mensaje = "Listado con el nombre de cada cliente y el nombre y apellido de su representante de ventas".ToUpper();
@@ -141,7 +122,7 @@ namespace Aplicacion.Repository
             var mensaje = "Listado con el nombre de cada cliente y el nombre y apellido de su representante de ventas".ToUpper();
 
             var consulta = from cliente in _context.Clientes
-                           join representante in _context.Empleados on 1 equals 1 // Dummy condition for NATURAL JOIN
+                           join representante in _context.Empleados on 1 equals 1 
                            select new
                            {
                                cliente.NombreCliente,
@@ -156,40 +137,7 @@ namespace Aplicacion.Repository
 
             return resultado;
         }
-        public async Task<IEnumerable<object>> Consulta13()
-        {
-            var mensaje = "Nombre de los clientes que han realizado pagos junto con el nombre de sus representantes de ventas".ToUpper();
 
-            var consulta = from cliente in _context.Clientes
-                           join pago in _context.Pagos on cliente.CodigoCliente equals pago.CodigoCliente
-                           join representante in _context.Empleados on cliente.CodigoEmpleadoRepVentas equals representante.CodigoEmpleado
-                           select new
-                           {
-                               cliente.NombreCliente,
-                               Pagos = new
-                               {
-                                   pago.CodigoCliente,
-                                   pago.FormaPago,
-                                   pago.IdTransaccion,
-                                   pago.FechaPago,
-                                   pago.Total
-
-                               },
-                               Representante = new
-                               {
-                                   representante.Nombre,
-                                   representante.Apellido1
-
-                               }
-                           };
-
-            var resultado = new List<object>
-                {
-                    new { Informacion = mensaje, Resultado = await consulta.ToListAsync() }
-                };
-
-            return resultado;
-        }
 
 
         public async Task<IEnumerable<object>> Consulta13Sql2I()
@@ -257,32 +205,7 @@ namespace Aplicacion.Repository
 
             return resultado;
         }
-        public async Task<IEnumerable<object>> Consulta14()
-        {
-            var mensaje = "Nombre de los clientes que no han realizado pagos junto con el nombre de sus representantes de ventas".ToUpper();
 
-            var consulta = from cliente in _context.Clientes
-                           join representante in _context.Empleados on cliente.CodigoEmpleadoRepVentas equals representante.CodigoEmpleado into representantes
-                           from representante in representantes.DefaultIfEmpty()
-                           join pago in _context.Pagos on cliente.CodigoCliente equals pago.CodigoCliente into pagos
-                           where !pagos.Any()
-                           select new
-                           {
-                               cliente.NombreCliente,
-                               Representante = new
-                               {
-                                   representante.Nombre,
-                                   representante.Apellido1
-                               }
-                           };
-
-            var resultado = new List<object>
-            {
-                new { Informacion = mensaje, Resultado = await consulta.ToListAsync() }
-            };
-
-            return resultado;
-        }
         public async Task<IEnumerable<object>> Consulta14Sql2I()
         {
             var mensaje = "Nombre de los clientes que no han realizado pagos junto con el nombre de sus representantes de ventas".ToUpper();
@@ -331,35 +254,7 @@ namespace Aplicacion.Repository
 
             return resultado;
         }
-        public async Task<IEnumerable<object>> Consulta15()
-        {
-            var mensaje = "Nombre de los clientes que han hecho pagos y el nombre de sus representantes junto con la ciudad de la oficina".ToUpper();
-
-            var consulta = from cliente in _context.Clientes
-                           join pago in _context.Pagos on cliente.CodigoCliente equals pago.CodigoCliente
-                           join representante in _context.Empleados on cliente.CodigoEmpleadoRepVentas equals representante.CodigoEmpleado
-                           join oficina in _context.Oficinas on representante.CodigoOficina equals oficina.CodigoOficina
-                           select new
-                           {
-                               cliente.NombreCliente,
-                               Representante = new
-                               {
-                                   representante.Nombre,
-                                   representante.Apellido1,
-                                   Oficina = new
-                                   {
-                                       oficina.Ciudad
-                                   }
-                               }
-                           };
-
-            var resultado = new List<object>
-    {
-        new { Informacion = mensaje, Resultado = await consulta.ToListAsync() }
-    };
-
-            return resultado;
-        }
+ 
         public async Task<IEnumerable<object>> Consulta15Sql2I()
         {
             var mensaje = "Nombre de los clientes que han hecho pagos y el nombre de sus representantes junto con la ciudad de la oficina".ToUpper();
@@ -422,37 +317,7 @@ namespace Aplicacion.Repository
         }
 
 
-        public async Task<IEnumerable<object>> Consulta16()
-        {
-            var mensaje = "Nombre de los clientes que no han hecho pagos y el nombre de sus representantes junto con la ciudad de la oficina".ToUpper();
 
-            var consulta = from cliente in _context.Clientes
-                           join representante in _context.Empleados on cliente.CodigoEmpleadoRepVentas equals representante.CodigoEmpleado into representantes
-                           from representante in representantes.DefaultIfEmpty()
-                           join oficina in _context.Oficinas on representante.CodigoOficina equals oficina.CodigoOficina into oficinas
-                           from oficina in oficinas.DefaultIfEmpty()
-                           where !_context.Pagos.Any(pago => pago.CodigoCliente == cliente.CodigoCliente)
-                           select new
-                           {
-                               cliente.NombreCliente,
-                               Representante = new
-                               {
-                                   representante.Nombre,
-                                   representante.Apellido1,
-                                   Oficina = new
-                                   {
-                                       oficina.Ciudad
-                                   }
-                               }
-                           };
-
-            var resultado = new List<object>
-    {
-        new { Informacion = mensaje, Resultado = await consulta.ToListAsync() }
-    };
-
-            return resultado;
-        }
         public async Task<IEnumerable<object>> Consulta16Sql2I()
         {
             var mensaje = "Nombre de los clientes que no han hecho pagos y el nombre de sus representantes junto con la ciudad de la oficina".ToUpper();
@@ -514,25 +379,7 @@ namespace Aplicacion.Repository
             return resultado;
         }
 
-        public async Task<IEnumerable<object>> Consulta18()
-        {
-            var mensaje = "Clientes a los que no se les ha entregado a tiempo un pedido".ToUpper();
 
-            var consulta = from cliente in _context.Clientes
-                           join pedido in _context.Pedidos on cliente.CodigoCliente equals pedido.CodigoCliente
-                           where pedido.FechaEntrega == null || pedido.FechaEntrega > pedido.FechaEsperada
-                           select new
-                           {
-                               Cliente = cliente.NombreCliente
-                           };
-
-            var resultado = new List<object>
-    {
-        new { Informacion = mensaje, Resultado = await consulta.ToListAsync() }
-    };
-
-            return resultado;
-        }
 
         public async Task<IEnumerable<object>> Consulta18Sql2I()
         {
@@ -574,28 +421,7 @@ namespace Aplicacion.Repository
         }
 
 
-        public async Task<IEnumerable<object>> Consulta19()
-        {
-            var mensaje = "Diferentes gamas de producto compradas por cada cliente".ToUpper();
 
-            var consulta = from cliente in _context.Clientes
-                           join pedido in _context.Pedidos on cliente.CodigoCliente equals pedido.CodigoCliente
-                           join detalle in _context.DetallePedidos on pedido.CodigoPedido equals detalle.CodigoPedido
-                           join producto in _context.Productos on detalle.CodigoProducto equals producto.CodigoProducto
-                           join gama in _context.GamaProductos on producto.Gama equals gama.Gama
-                           select new
-                           {
-                               Cliente = cliente.NombreCliente,
-                               GamaProducto = gama.Gama
-                           };
-
-            var resultado = new List<object>
-        {
-            new { Informacion = mensaje, Resultado = await consulta.ToListAsync() }
-        };
-
-            return resultado;
-        }
         public async Task<IEnumerable<object>> Consulta19Sql2I()
         {
             var mensaje = "Diferentes gamas de producto compradas por cada cliente".ToUpper();
@@ -688,46 +514,7 @@ namespace Aplicacion.Repository
             return resultado;
         }
 
-        public async Task<IEnumerable<object>> Consulta20NaturalLeft()
-        {
-            var mensaje = "Clientes que no han realizado ningún pago (NATURAL LEFT JOIN)".ToUpper();
 
-            var consulta = from cliente in _context.Clientes
-                           join pago in _context.Pagos on cliente.CodigoCliente equals pago.CodigoCliente into pagosJoin
-                           from pago in pagosJoin.DefaultIfEmpty()
-                           where pago == null
-                           select new
-                           {
-                               Cliente = cliente.NombreCliente
-                           };
-
-            var resultado = new List<object>
-    {
-        new { Informacion = mensaje, Resultado = await consulta.ToListAsync() }
-    };
-
-            return resultado;
-        }
-        public async Task<IEnumerable<object>> Consulta20NaturalRight()
-        {
-            var mensaje = "Clientes que no han realizado ningún pago (NATURAL RIGHT JOIN)".ToUpper();
-
-            var consulta = from cliente in _context.Clientes
-                           join pago in _context.Pagos on cliente.CodigoCliente equals pago.CodigoCliente into clientesJoin
-                           from pago in clientesJoin.DefaultIfEmpty()
-                           where pago == null
-                           select new
-                           {
-                               Cliente = cliente.NombreCliente
-                           };
-
-            var resultado = new List<object>
-    {
-        new { Informacion = mensaje, Resultado = await consulta.ToListAsync() }
-    };
-
-            return resultado;
-        }
 
 
         public async Task<IEnumerable<object>> Consulta21Left()
@@ -777,52 +564,7 @@ namespace Aplicacion.Repository
 
 
 
-        public async Task<IEnumerable<object>> Consulta21NaturalLeft()
-        {
-            var mensaje = "Clientes sin pagos (NATURAL LEFT JOIN)".ToUpper();
-
-            var consulta = from cliente in _context.Clientes
-                           join pago in _context.Pagos on cliente.CodigoCliente equals pago.CodigoCliente into pagosJoin
-                           from pago in pagosJoin.DefaultIfEmpty()
-                           where pago == null
-                           select new
-                           {
-                               Cliente = cliente.NombreCliente,
-                               TienePago = pago != null
-                           };
-
-            var resultado = new List<object>
-    {
-        new { Informacion = mensaje, Resultado = await consulta.ToListAsync() }
-    };
-
-            return resultado;
-        }
-
-
-        public async Task<IEnumerable<object>> Consulta21NaturalRight()
-        {
-            var mensaje = "Clientes sin pedidos (NATURAL RIGHT JOIN)".ToUpper();
-
-            var consulta = from cliente in _context.Clientes
-                           join pedido in _context.Pedidos on cliente.CodigoCliente equals pedido.CodigoCliente into pedidosJoin
-                           from pedido in pedidosJoin.DefaultIfEmpty()
-                           where pedido == null
-                           select new
-                           {
-                               Cliente = cliente.NombreCliente,
-                               TienePedido = pedido != null
-                           };
-
-            var resultado = new List<object>
-    {
-        new { Informacion = mensaje, Resultado = await consulta.ToListAsync() }
-    };
-
-            return resultado;
-        }
-
-
+       
 
         public async Task<IEnumerable<object>> Consulta22Left()
         {
@@ -848,7 +590,6 @@ namespace Aplicacion.Repository
         }
 
 
-        // RIGHT JOIN para empleados sin clientes
         public async Task<IEnumerable<object>> Consulta22Right()
         {
             var mensaje = "Empleados sin clientes (RIGHT JOIN)".ToUpper();
@@ -873,54 +614,7 @@ namespace Aplicacion.Repository
         }
 
 
-        public async Task<IEnumerable<object>> Consulta22NaturalLeft()
-        {
-            var mensaje = "Empleados sin clientes (NATURAL LEFT JOIN)".ToUpper();
-
-            var consulta = from empleado in _context.Empleados
-                           join cliente in _context.Clientes on empleado.CodigoEmpleado equals cliente.CodigoEmpleadoRepVentas into clientesJoin
-                           from cliente in clientesJoin.DefaultIfEmpty()
-                           where cliente == null
-                           select new
-                           {
-                               Empleado = empleado.Nombre,
-                               Oficina = empleado.CodigoOficinaNavigation.Ciudad,
-                               TieneCliente = cliente != null
-                           };
-
-            var resultado = new List<object>
-    {
-        new { Informacion = mensaje, Resultado = await consulta.ToListAsync() }
-    };
-
-            return resultado;
-        }
-
-
-        public async Task<IEnumerable<object>> Consulta22NaturalRight()
-        {
-            var mensaje = "Empleados sin clientes (NATURAL RIGHT JOIN)".ToUpper();
-
-            var consulta = from empleado in _context.Empleados
-                           join cliente in _context.Clientes on empleado.CodigoEmpleado equals cliente.CodigoEmpleadoRepVentas into clientesJoin
-                           from cliente in clientesJoin.DefaultIfEmpty()
-                           where cliente == null
-                           select new
-                           {
-                               Empleado = empleado.Nombre,
-                               Oficina = empleado.CodigoOficinaNavigation.Ciudad,
-                               TieneCliente = cliente != null
-                           };
-
-            var resultado = new List<object>
-    {
-        new { Informacion = mensaje, Resultado = await consulta.ToListAsync() }
-    };
-
-            return resultado;
-        }
-
-
+       
         public async Task<IEnumerable<object>> Consulta27Left()
         {
             var mensaje = "Clientes con pedidos pero sin pagos (LEFT JOIN)".ToUpper();
@@ -966,47 +660,7 @@ namespace Aplicacion.Repository
         }
 
 
-        public async Task<IEnumerable<object>> Consulta27NaturalLeft()
-        {
-            var mensaje = "Clientes con pedidos pero sin pagos (NATURAL LEFT JOIN)".ToUpper();
-
-            var consulta = from cliente in _context.Clientes
-                           join pago in _context.Pagos on cliente.CodigoCliente equals pago.CodigoCliente into pagosJoin
-                           from pago in pagosJoin.DefaultIfEmpty()
-                           where pago == null
-                           select new
-                           {
-                               Cliente = cliente.NombreCliente
-                           };
-
-            var resultado = new List<object>
-    {
-        new { Informacion = mensaje, Resultado = await consulta.ToListAsync() }
-    };
-
-            return resultado;
-        }
-
-        public async Task<IEnumerable<object>> Consulta27NaturalRight()
-        {
-            var mensaje = "Clientes con pedidos pero sin pagos (NATURAL RIGHT JOIN)".ToUpper();
-
-            var consulta = from pago in _context.Pagos
-                           join cliente in _context.Clientes on pago.CodigoCliente equals cliente.CodigoCliente into clientesJoin
-                           from cliente in clientesJoin.DefaultIfEmpty()
-                           where cliente == null
-                           select new
-                           {
-                               Cliente = pago.CodigoClienteNavigation.NombreCliente
-                           };
-
-            var resultado = new List<object>
-    {
-        new { Informacion = mensaje, Resultado = await consulta.ToListAsync() }
-    };
-
-            return resultado;
-        }
+      
         public async Task<int> Consulta33()
         {
             var clientesEnMadrid = await _context.Clientes
@@ -1175,6 +829,7 @@ namespace Aplicacion.Repository
         public async Task<IEnumerable<object>> Consulta60()
         {
             var clientesConInformacion = await _context.Clientes
+               
                 .Select(cliente => new
                 {
                     NombreCliente = cliente.NombreCliente,

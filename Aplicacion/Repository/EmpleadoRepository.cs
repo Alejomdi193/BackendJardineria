@@ -26,7 +26,6 @@ namespace Aplicacion.Repository
         public override async Task<Empleado> GetByIdAsync(int codigoEmpleado)
         {
             return await _context.Empleados
-                //.Include(p => p.)
                 .FirstOrDefaultAsync(p => p.CodigoEmpleado == codigoEmpleado);
         }
 
@@ -120,7 +119,7 @@ namespace Aplicacion.Repository
 
 
 
-        // LEFT JOIN: Empleados sin oficina
+        
         public async Task<IEnumerable<object>> Consulta23Left()
         {
             var mensaje = "Empleados sin oficina (LEFT JOIN)".ToUpper();
@@ -143,7 +142,7 @@ namespace Aplicacion.Repository
             return resultado;
         }
 
-        // RIGHT JOIN: Empleados sin cliente
+       
         public async Task<IEnumerable<object>> Consulta23Right()
         {
             var mensaje = "Empleados sin cliente (RIGHT JOIN)".ToUpper();
@@ -189,7 +188,7 @@ namespace Aplicacion.Repository
             return resultado;
         }
 
-        // NATURAL RIGHT JOIN: Empleados sin cliente
+
         public async Task<IEnumerable<object>> Consulta23NaturalRight()
         {
             var mensaje = "Empleados sin cliente (NATURAL RIGHT JOIN)".ToUpper();
@@ -211,7 +210,6 @@ namespace Aplicacion.Repository
 
             return resultado;
         }
-
 
 
         public async Task<IEnumerable<object>> Consulta26Right()

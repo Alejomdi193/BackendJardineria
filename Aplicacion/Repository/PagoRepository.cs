@@ -20,7 +20,6 @@ namespace Aplicacion.Repository
         public override async Task<IEnumerable<Pago>> GetAllAsync()
         {
             return await _context.Pagos
-                //.Include(p => p.)
                 .ToListAsync();
         }
 
