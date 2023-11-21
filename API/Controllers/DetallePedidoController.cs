@@ -79,6 +79,15 @@ public class DetallePedidoController : BaseApiController
         return mapper.Map<List<object>>(data);
     }
 
+    [HttpGet("Consulta43")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    public async Task<ActionResult<IEnumerable<object>>> Get43()
+    {
+        var data = await unitOfWork.DetallePedidos.Consulta43();
+        return mapper.Map<List<object>>(data);
+    }
+
 
 
     [HttpGet("Pagination")]

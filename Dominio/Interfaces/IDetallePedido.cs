@@ -12,6 +12,7 @@ namespace Dominio.Interfaces
         Task<IEnumerable<object>> Consulta39();
         Task<IEnumerable<object>> Consulta40();
         Task<IEnumerable<object>> Consulta42();
+        Task<IEnumerable<object>> Consulta43();
      
        
     }

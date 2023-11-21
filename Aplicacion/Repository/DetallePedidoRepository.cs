@@ -135,5 +135,30 @@ namespace Aplicacion.Repository
             return consulta;
         }
 
+        public async Task<IEnumerable<object>> Consulta43()
+        {
+            var consulta = await _context.DetallePedidos
+                .GroupBy(detallePedido => detallePedido.CodigoProducto)
+                .ToListAsync();
+            
+            var _consulta =  consulta
+                .Join(
+                    _context.Productos,
+                    grupo => grupo.Key,
+                    producto => producto.CodigoProducto,
+                    (consulta, producto) => new
+                    {
+                        NombreProducto = producto.Nombre,
+                        UnidadesVendidad = consulta.Sum(p => p.Cantidad),
+                        TotalFacturado = consulta.Sum(p => p.Cantidad * p.PrecioUnidad),
+                        TotalFacturadoIva = consulta.Sum(p => p.Cantidad * p.PrecioUnidad * (decimal)1.21)
+                    })
+                    .Where(resultado => resultado.TotalFacturadoIva > 3000)
+                    .OrderByDescending(resultado => resultado.TotalFacturadoIva)
+                    .ToList();
+
+                return _consulta;
+            ;
+        }
     }
 }
